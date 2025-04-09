@@ -143,7 +143,7 @@ useEffect(() => {
   return (
     <div className="flex flex-col min-h-screen">
 
-<div className="bg-slate-800 lg:flex justify-between items-center lg:px-20 py-3 hidden text-white border-b border-b-amber-400">
+<div className="bg-slate-800 lg:flex justify-between items-center lg:px-20 py-3 hidden text-white border-b border-b-accent-400">
   {/* Left - Phone */}
   <div className="flex items-center space-x-2">
     <Phone className="h-5 w-5 text-white" />
@@ -399,7 +399,7 @@ useEffect(() => {
         <motion.div whileHover={{ scale: 1.02 }} className="relative">
           <Card className="overflow-hidden shadow-md">
             <Image
-              src="/images/roofing1.jpg"
+              src="/images/asphalt1.jpg"
               alt="Roofing Materials"
               width={500}
               height={300}
@@ -417,7 +417,7 @@ useEffect(() => {
         <motion.div whileHover={{ scale: 1.02 }} className="md:col-span-2 relative">
           <Card className="overflow-hidden shadow-md">
             <Image
-              src="/images/ourteam.jpg"
+              src="/images/roofing1.jpg"
               alt="Our Roofing Team"
               width={1000}
               height={400}
