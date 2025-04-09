@@ -31,12 +31,10 @@ const staggerContainer = {
 
 
 const imgs = [
-  '/assets/icons/theguardian.jpg',
-  '/assets/icons/nytimes.jpg',
-  '/assets/icons/mayfair.jpg',
-  '/assets/icons/ceomagazine.jpg',
-  '/assets/icons/businessinsider.jpg',
-  '/assets/icons/bloomberg.jpg',
+  '/images/malarkey.png',
+  '/images/bp.png',
+  '/images/velux.png',
+  '/images/iko.png',
 ]
   
 
