@@ -409,12 +409,12 @@ useEffect(() => {
               <CardTitle className="text-red-600">Brand-Name Roofing Materials</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-700">We specialize in asphalt roofing using only top-quality materials from Malarkey, IKO, and BP to ensure long-lasting protection for your home.</p>
+              <p className="text-gray-700">We specialize in asphalt roofing using only top-quality materials from Malarkey, IKO, and BP to ensure long-lasting protection for your home. We believe you will make the right choice</p>
             </CardContent>
           </Card>
         </motion.div>
 
-        <motion.div whileHover={{ scale: 1.02 }} className="md:col-span-2 relative">
+        {/* <motion.div whileHover={{ scale: 1.02 }} className="md:col-span-2 relative">
           <Card className="overflow-hidden shadow-md">
             <Image
               src="/images/roofing1.jpg"
@@ -430,10 +430,10 @@ useEffect(() => {
               <p className="text-gray-700">We take pride in our craftsmanship and ensure every job is completed to the highest standards. That’s why we never subcontract. Call 403‑650‑9654 to schedule an estimate.</p>
             </CardContent>
           </Card>
-        </motion.div>
+        </motion.div> */}
       </div>
 
-      <div className="mt-12 p-6 bg-slate-100 rounded-lg shadow-inner animate-fadeIn">
+      {/* <div className="mt-12 p-6 bg-slate-100 rounded-lg shadow-inner animate-fadeIn">
         <h3 className="text-xl font-bold mb-4 text-sky-700">Professional Affiliations</h3>
         <ul className="space-y-2 text-gray-700">
           <li className="flex items-start">
@@ -449,7 +449,7 @@ useEffect(() => {
             <span>Fully Licensed and Insured</span>
           </li>
         </ul>
-      </div>
+      </div> */}
 
       <div className="mt-8 text-center">
         <p className="text-xl font-bold text-sky-700">Specialty: Asphalt Shingles Re-Roofing</p>
