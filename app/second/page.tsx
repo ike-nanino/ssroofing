@@ -11,6 +11,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import Image from 'next/image';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -229,7 +230,12 @@ export default function RoofingLandingPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="h-40 bg-gray-200 mb-4 rounded-md flex items-center justify-center">
-                    <img src="/api/placeholder/400/320" alt="Shingles" className="max-h-full" />
+                  <Image 
+                    src=""
+                    alt="Shingles"
+                    fill
+                    />
+                   
                   </div>
                   <p>Quality installation of various shingle types to match your home's style and your budget.</p>
                 </CardContent>
@@ -241,7 +247,12 @@ export default function RoofingLandingPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="h-40 bg-gray-200 mb-4 rounded-md flex items-center justify-center">
-                    <img src="/api/placeholder/400/320" alt="Roofing" className="max-h-full" />
+                    <Image 
+                    src="/api/placeholder/400/320"
+                    alt="Roofing"
+                    fill
+                    />
+                 
                   </div>
                   <p>Complete roofing solutions including inspections, repairs, and full roof replacements.</p>
                 </CardContent>
@@ -253,7 +264,12 @@ export default function RoofingLandingPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="h-40 bg-gray-200 mb-4 rounded-md flex items-center justify-center">
-                    <img src="/api/placeholder/400/320" alt="Re-Roofing" className="max-h-full" />
+                  <Image 
+                    src="/api/placeholder/400/320"
+                    alt="Roofing"
+                    fill
+                    />
+                    
                   </div>
                   <p>Our specialty service - efficient and high-quality re-roofing with premium asphalt shingles.</p>
                 </CardContent>
@@ -312,7 +328,11 @@ export default function RoofingLandingPage() {
                     </CardContent>
                     <CardFooter>
                       <div className="flex items-center">
-                        <img src="/api/placeholder/40/40" alt="Google" className="w-5 h-5 mr-2" />
+                        <Image 
+                    src="/api/placeholder/400/320"
+                    alt="Roofing"
+                    fill
+                    />
                         <span className="text-sm text-gray-500">Google Review</span>
                       </div>
                     </CardFooter>

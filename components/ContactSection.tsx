@@ -27,23 +27,21 @@ function ContactSection() {
 
         {/* Right Side: Contact Form */}
         <div className='xl:h-[54%] order-2 xl:order-none'>
-            <form className='flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl' onSubmit={handleSubmit}>
+            <form className='flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl'>
               
               <div className='grid grid-cols-1 md:grid-cols-2 gap-6 text-white'>
-                <Input name="name" value={formData.name} onChange={handleChange} type='text' placeholder='Name' required />
-                <Input name="subject" value={formData.subject} onChange={handleChange} type='text' placeholder='Subject' required />
-                <Input name="email" value={formData.email} onChange={handleChange} type='email' placeholder='Email Address' required />
-                <Input name="phone" value={formData.phone} onChange={handleChange} type='text' placeholder='Phone Number' />
+                <Input name="name"  type='text' placeholder='Name' required />
+                <Input name="subject" type='text' placeholder='Subject' required />
+                <Input name="email"  type='email' placeholder='Email Address' required />
+                <Input name="phone"   type='text' placeholder='Phone Number' />
               </div>
 
-              <Textarea name="message" value={formData.message} onChange={handleChange} className='h-[200px] text-white' placeholder='Type your message here' required />
+              <Textarea name="message" className='h-[200px] text-white' placeholder='Type your message here' required />
 
-              <Button type='submit' className='max-w-32' disabled={isSubmitting}>
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+              <Button type='submit' className='max-w-32' >
+                Message
               </Button>
 
-              {success && <p className="text-green-500">Your message has been sent successfully!</p>}
-              {error && <p className="text-red-500">{error}</p>}
             </form>
           </div>
       </div>
