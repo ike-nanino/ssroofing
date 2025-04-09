@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Star, Phone, MapPin, ArrowRight, Check, Menu, X } from 'lucide-react';
+import { Star, Phone, MapPin, ArrowRight, Check, Menu, X, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -217,84 +217,113 @@ export default function Home() {
              </motion.div>
            </div>
          </section>
+
+         {/* EiEuro Shield */}
+
+         <section className="relative w-full h-auto flex flex-col lg:flex-row items-center justify-between overflow-hidden">
+      {/* Left content */}
+      <div className="w-full lg:w-1/2 bg-sky-300 p-6 sm:p-10 lg:p-14 text-white">
+        <div className="flex items-start gap-4">
+          <div className="bg-white text-sky-500 p-2 rounded-full">
+            <MessageCircle className="w-6 h-6" />
+          </div>
+          <div>
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold leading-snug">
+              Curious about Euroshield® for your home in Simcoe County, North York Region or North Durham region?
+            </h2>
+            <p className="mt-4 text-base sm:text-lg font-semibold">
+              Give Ontario Certified Roofing a call and we will be happy to help!
+            </p>
+
+            <button className="mt-6 bg-black text-white font-bold py-2 px-6 rounded hover:bg-gray-800 transition">
+              WE CAN HELP →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Right image */}
+      <div className="w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-auto relative">
+        <Image
+          src="/roofing-placeholder.jpg" // 🔁 Replace this with your image path
+          alt="Roof"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
+    </section>
          
          {/* Services Section */}
-         <section id="services" className="py-16 bg-slate-100">
-           <div className="container mx-auto px-4">
-             <motion.div
-               initial="hidden"
-               whileInView="visible"
-               viewport={{ once: true }}
-               variants={fadeIn}
-             >
-               <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
-               
-               <div className="grid md:grid-cols-3 gap-6">
-                 <Card className="bg-white">
-                   <CardHeader>
-                     <CardTitle>Shingles</CardTitle>
-                   </CardHeader>
-                   <CardContent>
-                     <div className="h-40 bg-gray-200 mb-4 rounded-md flex items-center justify-center">
-                     <Image 
-                       src="/images/shingles.jpg"
-                       alt="Shingles"
-                       fill
-                       />
-                      
-                     </div>
-                     <p>Quality installation of various shingle types to match your home&apos;s style and your budget.</p>
-                   </CardContent>
-                 </Card>
-                 
-                 <Card className="bg-white">
-                   <CardHeader>
-                     <CardTitle>Roofing</CardTitle>
-                   </CardHeader>
-                   <CardContent>
-                     <div className="h-40 bg-gray-200 mb-4 rounded-md flex items-center justify-center">
-                       <Image 
-                       src="/images/roofing.jpg"
-                       alt="Roofing"
-                       fill
-                       />
-                    
-                     </div>
-                     <p>Complete roofing solutions including inspections, repairs, and full roof replacements.</p>
-                   </CardContent>
-                 </Card>
-                 
-                 <Card className="bg-white">
-                   <CardHeader>
-                     <CardTitle>Asphalt Shingles Re-Roofing</CardTitle>
-                   </CardHeader>
-                   <CardContent>
-                     <div className="h-40 bg-gray-200 mb-4 rounded-md flex items-center justify-center">
-                     <Image 
-                       src="/images/asphalt.jpg"
-                       alt="Roofing"
-                       fill
-                       />
-                       
-                     </div>
-                     <p>Our specialty service - efficient and high-quality re-roofing with premium asphalt shingles.</p>
-                   </CardContent>
-                 </Card>
-               </div>
-               
-               <div className="mt-12 text-center">
-                 <h3 className="text-2xl font-bold mb-6">Design Your Own Roof</h3>
-                 <p className="max-w-2xl mx-auto mb-8">Interested in creating a roof tailored to your unique taste? Explore our premium roofing material partners:</p>
-                 
-                 <div className="flex flex-wrap justify-center gap-4">
-                   <Button variant="outline" className="bg-white">Malarkey Roofing Products</Button>
-                   <Button variant="outline" className="bg-white">IKO</Button>
-                   <Button variant="outline" className="bg-white">BP</Button>
-                 </div>
-               </div>
-             </motion.div>
-           </div>
-         </section>
+         <section id="services" className="py-20 bg-slate-100">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeIn}
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">
+            Our Services
+          </h2>
+
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                title: 'Shingles',
+                img: '/images/shingles.jpg',
+                desc: 'Quality installation of various shingle types to match your home\'s style and your budget.',
+              },
+              {
+                title: 'Roofing',
+                img: '/images/roofing.jpg',
+                desc: 'Complete roofing solutions including inspections, repairs, and full roof replacements.',
+              },
+              {
+                title: 'Asphalt Shingles Re-Roofing',
+                img: '/images/asphalt.jpg',
+                desc: 'Our specialty service – efficient and high-quality re-roofing with premium asphalt shingles.',
+              },
+            ].map((item, idx) => (
+              <Card
+                key={idx}
+                className="bg-white shadow-md hover:shadow-xl transition-shadow duration-300 hover:-translate-y-1"
+              >
+                <CardHeader className="p-0">
+                  <div className="h-48 w-full relative rounded-t-md overflow-hidden">
+                    <Image
+                      src={item.img}
+                      alt={item.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <CardTitle className="p-4 text-xl font-semibold">
+                    {item.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="p-4 pt-0 text-sm text-gray-700">
+                  {item.desc}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="mt-16 text-center">
+            <h3 className="text-2xl font-bold mb-4">Design Your Own Roof</h3>
+            <p className="max-w-2xl mx-auto mb-6 text-gray-600">
+              Interested in creating a roof tailored to your unique taste? Explore our premium roofing material partners:
+            </p>
+
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button variant="outline" className="bg-white hover:bg-gray-100">Malarkey Roofing Products</Button>
+              <Button variant="outline" className="bg-white hover:bg-gray-100">IKO</Button>
+              <Button variant="outline" className="bg-white hover:bg-gray-100">BP</Button>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
          
          {/* Reviews Section */}
          <section id="reviews" className="py-16 bg-white">
@@ -334,11 +363,7 @@ export default function Home() {
                        </CardContent>
                        <CardFooter>
                          <div className="flex items-center">
-                           <Image 
-                       src="/api/placeholder/400/320"
-                       alt="Roofing"
-                       fill
-                       />
+                       
                            <span className="text-sm text-gray-500">Google Review</span>
                          </div>
                        </CardFooter>
@@ -351,7 +376,7 @@ export default function Home() {
          </section>
          
          {/* CTA Section */}
-         <section className="py-16 bg-red-600 text-white">
+         {/* <section className="py-16 bg-red-600 text-white">
            <div className="container mx-auto px-4">
              <motion.div
                initial="hidden"
@@ -367,7 +392,7 @@ export default function Home() {
                </Button>
              </motion.div>
            </div>
-         </section>
+         </section> */}
          
          {/* Contact Section */}
          <section id="contact" className="py-16 bg-slate-100">
