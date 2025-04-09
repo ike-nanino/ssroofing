@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Star, Phone, MapPin, ArrowRight, Check, Menu, X, MessageCircle } from 'lucide-react';
+import { Star, Phone, MapPin, Check, Menu, X, MessageCircle, Mail, Facebook, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -112,10 +112,66 @@ export default function Home() {
 // Change image every 5 seconds
 
 
+const [scrolled, setScrolled] = useState(false)
+
+useEffect(() => {
+  const handleScroll = () => {
+    const isScrolled = window.scrollY > 72;
+    setScrolled(isScrolled);
+  };
+
+  const handleVisibilityChange = () => {
+    if (document.visibilityState === "visible") {
+      handleScroll();
+    }
+  };
+
+  // Initial check when component mounts
+  handleScroll();
+
+  window.addEventListener("scroll", handleScroll);
+  document.addEventListener("visibilitychange", handleVisibilityChange);
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+    document.removeEventListener("visibilitychange", handleVisibilityChange);
+  };
+}, []);
+
+
+
   return (
     <div className="flex flex-col min-h-screen">
+
+<div className="bg-blue-700 lg:flex justify-between items-center lg:px-20 py-3 hidden text-white">
+  {/* Left - Phone */}
+  <div className="flex items-center space-x-2">
+    <Phone className="h-5 w-5 text-white" />
+    <span>403-650-9654</span>
+  </div>
+
+  {/* Right - Email & Socials */}
+  <div className="flex items-center space-x-6">
+    {/* Email */}
+    <div className="flex items-center space-x-2">
+      <Mail className="h-5 w-5 text-white" />
+      <span>info@shinglesandshakes.com</span>
+    </div>
+
+    {/* Social Icons */}
+    <div className="flex items-center space-x-4">
+      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+        <Facebook className="h-5 w-5 hover:text-sky-300 transition" />
+      </a>
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+        <Instagram className="h-5 w-5 hover:text-pink-300 transition" />
+      </a>
+    </div>
+  </div>
+</div>
          {/* Header */}
-         <header className="bg-slate-900 text-white">
+         <header  className='text-white p-4 sticky top-0 left-0 right-0 z-50 
+    transition-all duration-300 bg-black'>
            <div className="container mx-auto px-4 py-4">
              <div className="flex justify-between items-center">
                <div className="text-xl font-bold">Shingles & Shakes Roofing Co. Ltd.</div>
