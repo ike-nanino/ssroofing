@@ -220,9 +220,9 @@ export default function Home() {
 
          {/* EiEuro Shield */}
 
-         <section className="relative w-full h-auto flex flex-col lg:flex-row items-center justify-between overflow-hidden">
+         <section className="relative  h-auto flex flex-col lg:flex-row items-center justify-between overflow-hidden">
       {/* Left content */}
-      <div className="w-full lg:w-1/2 bg-sky-300 p-6 sm:p-10 lg:p-14 text-white">
+      <div className="w-full lg:w-1/2 bg-sky-500 p-6 sm:p-10 lg:p-14 text-white">
         <div className="flex items-start gap-4">
           <div className="bg-white text-sky-500 p-2 rounded-full">
             <MessageCircle className="w-6 h-6" />
@@ -256,7 +256,7 @@ export default function Home() {
          
          {/* Services Section */}
          <section id="services" className="py-20 bg-slate-100">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -290,9 +290,7 @@ export default function Home() {
                 className="bg-white shadow-md hover:shadow-xl transition-shadow duration-300 hover:-translate-y-1"
               >
                 <CardHeader className="p-0">
-                <CardTitle className="p-4 text-xl font-semibold">
-                    {item.title}
-                  </CardTitle>
+                
                   <div className="h-48 w-full relative rounded-t-md overflow-hidden">
                     <Image
                       src={item.img}
@@ -301,7 +299,9 @@ export default function Home() {
                       className="object-cover"
                     />
                   </div>
-                  
+                  <CardTitle className="p-4 text-xl font-semibold">
+                    {item.title}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="p-4 pt-0 text-sm text-gray-700">
                   {item.desc}
