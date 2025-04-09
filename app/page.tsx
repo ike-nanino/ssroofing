@@ -245,7 +245,7 @@ export default function Home() {
       {/* Right image */}
       <div className="w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-auto relative">
         <Image
-          src="/roofing-placeholder.jpg" // 🔁 Replace this with your image path
+          src="/images/hero2.jpg" // 🔁 Replace this with your image path
           alt="Roof"
           fill
           className="object-cover"
@@ -290,6 +290,9 @@ export default function Home() {
                 className="bg-white shadow-md hover:shadow-xl transition-shadow duration-300 hover:-translate-y-1"
               >
                 <CardHeader className="p-0">
+                <CardTitle className="p-4 text-xl font-semibold">
+                    {item.title}
+                  </CardTitle>
                   <div className="h-48 w-full relative rounded-t-md overflow-hidden">
                     <Image
                       src={item.img}
@@ -298,9 +301,7 @@ export default function Home() {
                       className="object-cover"
                     />
                   </div>
-                  <CardTitle className="p-4 text-xl font-semibold">
-                    {item.title}
-                  </CardTitle>
+                  
                 </CardHeader>
                 <CardContent className="p-4 pt-0 text-sm text-gray-700">
                   {item.desc}
@@ -309,18 +310,6 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-16 text-center">
-            <h3 className="text-2xl font-bold mb-4">Design Your Own Roof</h3>
-            <p className="max-w-2xl mx-auto mb-6 text-gray-600">
-              Interested in creating a roof tailored to your unique taste? Explore our premium roofing material partners:
-            </p>
-
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button variant="outline" className="bg-white hover:bg-gray-100">Malarkey Roofing Products</Button>
-              <Button variant="outline" className="bg-white hover:bg-gray-100">IKO</Button>
-              <Button variant="outline" className="bg-white hover:bg-gray-100">BP</Button>
-            </div>
-          </div>
         </motion.div>
       </div>
     </section>
