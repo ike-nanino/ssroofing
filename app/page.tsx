@@ -100,7 +100,7 @@ export default function Home() {
   ];
 
 
-  const imagesHero = ["/images/hero1.jpg", "/images/hero2.jpg", "/images/hero3.jpg"]
+  const imagesHero = ["/images/hero2.jpg", "/images/hero3.jpg", "/images/hero1.jpg"]
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -521,7 +521,7 @@ export default function Home() {
          </section> */}
          
          {/* Contact Section */}
-         <section id="contact" className="py-16 bg-slate-100">
+         <section id="contact" className="py-16" style={{ backgroundImage: `url('/images/hero2.jpg')` }}>
            <div className="container mx-auto px-4">
              <motion.div
                initial="hidden"
@@ -529,36 +529,36 @@ export default function Home() {
                viewport={{ once: true }}
                variants={fadeIn}
              >
-               <h2 className="text-3xl font-bold text-center mb-12">Get In Touch</h2>
+               <h2 className="text-3xl text-white font-bold text-center mb-12">Get In Touch</h2>
                
                <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                  <div>
-                   <Card>
+                   <Card className="bg-white/10 backdrop-blur-sm border border-white/20 shadow-lg rounded-xl">
                      <CardHeader>
-                       <CardTitle>Contact Information</CardTitle>
+                       <CardTitle className="text-white">Contact Information</CardTitle>
                      </CardHeader>
                      <CardContent className="space-y-4">
                        <div className="flex items-start">
-                         <Phone className="h-5 w-5 mr-3 mt-1 text-red-600" />
+                         <Phone className="h-5 w-5 mr-3 mt-1 text-sky-600" />
                          <div>
-                           <h4 className="font-medium">Phone</h4>
-                           <p>403-650-9654</p>
+                           <h4 className="font-medium text-gray-100">Phone</h4>
+                           <p className="text-gray-100">403-650-9654</p>
                          </div>
                        </div>
                        <div className="flex items-start">
-                         <MapPin className="h-5 w-5 mr-3 mt-1 text-red-600" />
+                         <MapPin className="h-5 w-5 mr-3 mt-1 text-sky-600" />
                          <div>
-                           <h4 className="font-medium">Service Area</h4>
-                           <p>Calgary and surrounding areas</p>
+                           <h4 className="font-medium text-gray-100">Service Area</h4>
+                           <p className='text-gray-100'>Calgary and surrounding areas</p>
                          </div>
                        </div>
                        <div className="mt-6">
-                         <h4 className="font-medium mb-2">Business Hours</h4>
+                         <h4 className="font-medium mb-2 text-gray-100">Business Hours</h4>
                          <Accordion type="single" collapsible>
                            <AccordionItem value="hours">
-                             <AccordionTrigger>View our hours</AccordionTrigger>
+                             <AccordionTrigger className="text-white">View our hours</AccordionTrigger>
                              <AccordionContent>
-                               <div className="grid grid-cols-2 gap-2">
+                               <div className="grid grid-cols-2 gap-2 text-gray-100">
                                  <div>Monday - Friday</div>
                                  <div>8:00 AM - 6:00 PM</div>
                                  <div>Saturday</div>
@@ -575,31 +575,31 @@ export default function Home() {
                  </div>
                  
                  <div>
-                   <Card>
+                   <Card className="bg-white/10 backdrop-blur-sm border border-white/20 shadow-lg rounded-xl">
                      <CardHeader>
-                       <CardTitle>Send us a message</CardTitle>
+                       <CardTitle className="text-white">Send us a message</CardTitle>
                      </CardHeader>
                      <CardContent>
                        <form className="space-y-4">
                          <div className="grid grid-cols-2 gap-4">
                            <div>
-                             <label htmlFor="name" className="block text-sm font-medium mb-1">Name</label>
-                             <Input id="name" placeholder="Your name" />
+                             <label htmlFor="name" className="block text-sm font-medium mb-1 text-gray-100">Name</label>
+                             <Input id="name" placeholder="Your name" className='text-gray-100'/>
                            </div>
                            <div>
-                             <label htmlFor="phone" className="block text-sm font-medium mb-1">Phone</label>
-                             <Input id="phone" placeholder="Your phone number" />
+                             <label htmlFor="phone" className="block text-sm font-medium mb-1 text-gray-100">Phone</label>
+                             <Input id="phone" placeholder="Your phone number" className='text-gray-100'  />
                            </div>
                          </div>
                          <div>
-                           <label htmlFor="email" className="block text-sm font-medium mb-1">Email</label>
-                           <Input id="email" type="email" placeholder="Your email" />
+                           <label htmlFor="email" className="block text-sm font-medium mb-1 text-gray-100">Email</label>
+                           <Input id="email" type="email" placeholder="Your email" className='text-gray-100' />
                          </div>
                          <div>
-                           <label htmlFor="message" className="block text-sm font-medium mb-1">Message</label>
-                           <Textarea id="message" placeholder="Tell us about your roofing needs" rows={4} />
+                           <label htmlFor="message" className="block text-sm font-medium mb-1 text-gray-100">Message</label>
+                           <Textarea id="message" placeholder="Tell us about your roofing needs" rows={4}  className='text-gray-100'/>
                          </div>
-                         <Button className="w-full bg-red-600 hover:bg-red-700 text-white">Send Message</Button>
+                         <Button className="w-full bg-sky-600 hover:bg-sky-700 text-white">Send Message</Button>
                        </form>
                      </CardContent>
                    </Card>
