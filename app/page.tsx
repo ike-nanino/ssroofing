@@ -143,7 +143,7 @@ useEffect(() => {
   return (
     <div className="flex flex-col min-h-screen">
 
-<div className="bg-blue-700 lg:flex justify-between items-center lg:px-20 py-3 hidden text-white">
+<div className="bg-slate-700 lg:flex justify-between items-center lg:px-20 py-3 hidden text-white">
   {/* Left - Phone */}
   <div className="flex items-center space-x-2">
     <Phone className="h-5 w-5 text-white" />
@@ -171,7 +171,7 @@ useEffect(() => {
 </div>
          {/* Header */}
          <header  className='text-white p-4 sticky top-0 left-0 right-0 z-50 
-    transition-all duration-300 bg-black'>
+    transition-all duration-300 bg-slate-800'>
            <div className="container mx-auto px-4 py-4">
              <div className="flex justify-between items-center">
                <div className="text-xl font-bold">Shingles & Shakes Roofing Co. Ltd.</div>
@@ -364,39 +364,39 @@ useEffect(() => {
 
          {/* EiEuro Shield */}
 
-         <section className="relative  h-auto flex flex-col lg:flex-row items-center justify-between overflow-hidden">
-      {/* Left content */}
-      <div className="w-full lg:w-1/2 bg-sky-500 p-6 sm:p-10 lg:p-14 text-white">
-        <div className="flex items-start gap-4">
-          <div className="bg-white text-sky-500 p-2 rounded-full">
-            <MessageCircle className="w-6 h-6" />
-          </div>
-          <div>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold leading-snug">
-              Curious about Euroshield® for your home in Simcoe County, North York Region or North Durham region?
-            </h2>
-            <p className="mt-4 text-base sm:text-lg font-semibold">
-              Give Ontario Certified Roofing a call and we will be happy to help!
-            </p>
-
-            <button className="mt-6 bg-black text-white font-bold py-2 px-6 rounded hover:bg-gray-800 transition">
-              WE CAN HELP →
-            </button>
-          </div>
-        </div>
+         <section className="relative h-auto flex flex-col lg:flex-row items-center justify-between overflow-hidden">
+  {/* Left content */}
+  <div className="w-full lg:w-1/2 bg-sky-500 p-6 sm:p-10 lg:p-14 text-white">
+    <div className="flex items-start gap-4">
+      <div className="bg-white text-sky-500 p-2 rounded-full">
+        <MessageCircle className="w-6 h-6" />
       </div>
+      <div>
+        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold leading-snug">
+          Curious about Euroshield® for your home in Simcoe County, North York Region or North Durham region?
+        </h2>
+        <p className="mt-4 text-base sm:text-lg font-semibold">
+          Give Ontario Certified Roofing a call and we will be happy to help!
+        </p>
 
-      {/* Right image */}
-      <div className="w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-auto relative">
-        <Image
-          src="/images/hero2.jpg" // 🔁 Replace this with your image path
-          alt="Roof"
-          fill
-          className="object-cover"
-          priority
-        />
+        <button className="mt-6 bg-black text-white font-bold py-2 px-6 rounded hover:bg-gray-800 transition">
+          WE CAN HELP →
+        </button>
       </div>
-    </section>
+    </div>
+  </div>
+
+  {/* Right image */}
+  <div className="w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-[500px] relative">
+    <Image
+      src="/images/hero2.jpg" // 🔁 Replace with your actual image path
+      alt="Roof"
+      fill
+      className="object-cover"
+      priority
+    />
+  </div>
+</section>
          
          {/* Services Section */}
          <section id="services" className="py-20 bg-slate-100">
