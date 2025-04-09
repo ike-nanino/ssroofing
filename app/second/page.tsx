@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Star, Phone, MapPin, Mail, ArrowRight, Check, Menu, X } from 'lucide-react';
+import { Star, Phone, MapPin, ArrowRight, Check, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -115,7 +115,7 @@ export default function RoofingLandingPage() {
       </header>
       
       {/* Hero Section */}
-      <section className="relative bg-slate-800 text-white">
+      <section className="relative bg-slate-800 text-white" style={{ backgroundImage: `url('/images/hero1.jpg')` }}>
         <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
         <div className="relative z-20 container mx-auto px-4 py-20 md:py-32 flex flex-col items-center text-center">
           <motion.div
@@ -124,8 +124,8 @@ export default function RoofingLandingPage() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">Calgary's Asphalt Re-Roofing Specialists</h1>
-            <p className="text-xl max-w-2xl mx-auto mb-8">When it comes to roofing, a company doesn't have to be big to do high quality work. That's why we work on the principle of "small company, big on quality."</p>
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">Calgary&apos;s Asphalt Re-Roofing Specialists</h1>
+            <p className="text-xl max-w-2xl mx-auto mb-8">When it comes to roofing, a company doesn&apos;t have to be big to do high quality work. That&apos;s why we work on the principle of &quot;small company, big on quality.&quot;</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white">
                 Get A Free Estimate
@@ -459,7 +459,7 @@ export default function RoofingLandingPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <h3 className="text-xl font-bold mb-4">Shingles & Shakes Roofing Co. Ltd.</h3>
-              <p>Calgary's Asphalt Re-Roofing Specialists since 1990.</p>
+              <p>Calgary&apos;s Asphalt Re-Roofing Specialists since 1990.</p>
             </div>
             
             <div>
