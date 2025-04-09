@@ -379,16 +379,16 @@ useEffect(() => {
 
       <div className="grid md:grid-cols-2 gap-8">
         <motion.div whileHover={{ scale: 1.02 }} className="relative">
-          <Card className="overflow-hidden shadow-md">
+          <Card className="overflow-hidden shadow-md pt-0">
             <Image
               src="/images/shingles1.jpg"
               alt="Red Seal Certified"
               width={500}
               height={300}
-              className="w-full h-48 object-cover"
+              className="w-full h-64 object-cover"
             />
             <CardHeader>
-              <CardTitle className="text-red-600">Red Seal Certified, Licensed & Insured</CardTitle>
+              <CardTitle className="text-sky-600">Red Seal Certified, Licensed & Insured</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-gray-700">Shingles & Shakes Roofing Co. Ltd. provides roofing services from an Interprovincial Red Seal certified journeyman roofer with more than 40 years' experience. Licensed and insured since 1990.</p>
@@ -397,16 +397,16 @@ useEffect(() => {
         </motion.div>
 
         <motion.div whileHover={{ scale: 1.02 }} className="relative">
-          <Card className="overflow-hidden shadow-md">
+          <Card className="overflow-hidden shadow-md pt-0">
             <Image
               src="/images/asphalt1.jpg"
               alt="Roofing Materials"
               width={500}
               height={300}
-              className="w-full h-48 object-cover"
+              className="w-full h-64 object-cover"
             />
             <CardHeader>
-              <CardTitle className="text-red-600">Brand-Name Roofing Materials</CardTitle>
+              <CardTitle className="text-sky-600">Brand-Name Roofing Materials</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-gray-700">We specialize in asphalt roofing using only top-quality materials from Malarkey, IKO, and BP to ensure long-lasting protection for your home. We believe you will make the right choice</p>
@@ -415,16 +415,16 @@ useEffect(() => {
         </motion.div>
 
         {/* <motion.div whileHover={{ scale: 1.02 }} className="md:col-span-2 relative">
-          <Card className="overflow-hidden shadow-md">
+          <Card className="overflow-hidden shadow-md pt-0">
             <Image
               src="/images/roofing1.jpg"
               alt="Our Roofing Team"
               width={1000}
               height={400}
-              className="w-full h-48 object-cover"
+              className="w-full h-64 object-cover"
             />
             <CardHeader>
-              <CardTitle className="text-red-600">We Are Your Roofers – No Subcontractors</CardTitle>
+              <CardTitle className="text-sky-600">We Are Your Roofers – No Subcontractors</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-gray-700">We take pride in our craftsmanship and ensure every job is completed to the highest standards. That’s why we never subcontract. Call 403‑650‑9654 to schedule an estimate.</p>
