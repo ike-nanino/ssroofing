@@ -143,7 +143,7 @@ useEffect(() => {
   return (
     <div className="flex flex-col min-h-screen">
 
-<div className="bg-slate-700 lg:flex justify-between items-center lg:px-20 py-3 hidden text-white">
+<div className="bg-slate-800 lg:flex justify-between items-center lg:px-20 py-3 hidden text-white border border-b-amber-400">
   {/* Left - Phone */}
   <div className="flex items-center space-x-2">
     <Phone className="h-5 w-5 text-white" />
@@ -290,6 +290,8 @@ useEffect(() => {
 
          
          {/* About Section */}
+
+{/*          
          <section id="about" className="py-16 bg-white">
            <div className="container mx-auto px-4">
              <motion.div
@@ -360,11 +362,110 @@ useEffect(() => {
                </div>
              </motion.div>
            </div>
-         </section>
+         </section> */}
+
+
+
+<section id="about" className="py-16 bg-gradient-to-b from-slate-50 to-white">
+  <div className="container mx-auto px-4">
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeIn}
+      className="max-w-6xl mx-auto"
+    >
+      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-sky-700">Certified Journeyman Roofing Contractor in Calgary</h2>
+
+      <div className="grid md:grid-cols-2 gap-8">
+        <motion.div whileHover={{ scale: 1.02 }} className="relative">
+          <Card className="overflow-hidden shadow-md">
+            <Image
+              src="/images/redseal.jpg"
+              alt="Red Seal Certified"
+              width={500}
+              height={300}
+              className="w-full h-48 object-cover"
+            />
+            <CardHeader>
+              <CardTitle className="text-red-600">Red Seal Certified, Licensed & Insured</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-700">Shingles & Shakes Roofing Co. Ltd. provides roofing services from an Interprovincial Red Seal certified journeyman roofer with more than 40 years' experience. Licensed and insured since 1990.</p>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        <motion.div whileHover={{ scale: 1.02 }} className="relative">
+          <Card className="overflow-hidden shadow-md">
+            <Image
+              src="/images/materials.jpg"
+              alt="Roofing Materials"
+              width={500}
+              height={300}
+              className="w-full h-48 object-cover"
+            />
+            <CardHeader>
+              <CardTitle className="text-red-600">Brand-Name Roofing Materials</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-700">We specialize in asphalt roofing using only top-quality materials from Malarkey, IKO, and BP to ensure long-lasting protection for your home.</p>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        <motion.div whileHover={{ scale: 1.02 }} className="md:col-span-2 relative">
+          <Card className="overflow-hidden shadow-md">
+            <Image
+              src="/images/ourteam.jpg"
+              alt="Our Roofing Team"
+              width={1000}
+              height={400}
+              className="w-full h-48 object-cover"
+            />
+            <CardHeader>
+              <CardTitle className="text-red-600">We Are Your Roofers – No Subcontractors</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-700">We take pride in our craftsmanship and ensure every job is completed to the highest standards. That’s why we never subcontract. Call 403‑650‑9654 to schedule an estimate.</p>
+            </CardContent>
+          </Card>
+        </motion.div>
+      </div>
+
+      <div className="mt-12 p-6 bg-slate-100 rounded-lg shadow-inner animate-fadeIn">
+        <h3 className="text-xl font-bold mb-4 text-sky-700">Professional Affiliations</h3>
+        <ul className="space-y-2 text-gray-700">
+          <li className="flex items-start">
+            <Check className="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" />
+            <span>Inter-Provincial Red Seal Certified Journeyman Roofer</span>
+          </li>
+          <li className="flex items-start">
+            <Check className="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" />
+            <span>WCB Insured</span>
+          </li>
+          <li className="flex items-start">
+            <Check className="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" />
+            <span>Fully Licensed and Insured</span>
+          </li>
+        </ul>
+      </div>
+
+      <div className="mt-8 text-center">
+        <p className="text-xl font-bold text-sky-700">Specialty: Asphalt Shingles Re-Roofing</p>
+        <p className="mt-4 text-gray-700 max-w-3xl mx-auto">At Shingles & Shakes Roofing Co. Ltd., we are committed to top-quality service and excellent workmanship, leaving the site clean and never subcontracting our work.</p>
+      </div>
+    </motion.div>
+  </div>
+</section>
+
+
+
+
 
          {/* EiEuro Shield */}
 
-         <section className="relative h-auto flex flex-col lg:flex-row items-center justify-between overflow-hidden">
+         <section className="relative h-auto flex flex-col lg:flex-row items-center justify-between overflow-hidden mb-8">
   {/* Left content */}
   <div className="w-full lg:w-1/2 bg-sky-500 p-6 sm:p-10 lg:p-14 text-white">
     <div className="flex items-start gap-4">
@@ -373,10 +474,10 @@ useEffect(() => {
       </div>
       <div>
         <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold leading-snug">
-          Curious about Euroshield® for your home in Simcoe County, North York Region or North Durham region?
+          Curious about Euroshield® for your home in Calgary and its Enviros?
         </h2>
         <p className="mt-4 text-base sm:text-lg font-semibold">
-          Give Ontario Certified Roofing a call and we will be happy to help!
+          Give Shingles & Shakes Roofing a call and we will be happy to help!
         </p>
 
         <button className="mt-6 bg-black text-white font-bold py-2 px-6 rounded hover:bg-gray-800 transition">
@@ -411,7 +512,7 @@ useEffect(() => {
             Our Services
           </h2>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 title: 'Shingles',
@@ -433,7 +534,7 @@ useEffect(() => {
                 key={idx}
                 className="bg-white shadow-md hover:shadow-xl transition-shadow duration-300 hover:-translate-y-1"
               >
-                <CardHeader className="p-0">
+                <CardHeader>
                 
                   <div className="h-48 w-full relative rounded-t-md overflow-hidden">
                     <Image
@@ -462,10 +563,7 @@ useEffect(() => {
 
 
     <div className='bg-white py-16 text-center px-10'>
-            <h2 className='text-4xl mb-10 font-secondary'>
-                As featured in
-            </h2>
-            
+  
             <div className='max-w-6xl mx-auto overflow-hidden'>
                 <AnimatePresence mode="wait">
                     {isVisible && (
@@ -491,8 +589,8 @@ useEffect(() => {
                                     <Image 
                                         src={img} 
                                         alt={`Featured publication ${index + 1}`}
-                                        width={300}
-                                        height={100}
+                                        width={200}
+                                        height={80}
                                         className='h-24 w-auto object-contain mx-auto'
                                         priority={index < visibleImages}
                                     />
