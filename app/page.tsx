@@ -272,7 +272,7 @@ useEffect(() => {
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold my-4">
             Calgary&apos;s Asphalt Re-Roofing Specialists
           </h1>
           <p className="text-xl max-w-2xl mx-auto mb-8">
@@ -280,7 +280,7 @@ useEffect(() => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button size="lg" className="bg-sky-600 hover:bg-sky-700 text-white">
-              Get A Free Estimate
+              Learn More
               <Phone className="ml-2 h-4 w-4" />
             </Button>
           </div>
@@ -377,7 +377,7 @@ useEffect(() => {
     >
       <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-sky-700">Certified Journeyman Roofing Contractor in Calgary</h2>
 
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2">
         <motion.div whileHover={{ scale: 1.02 }} className="relative">
           <Card className="overflow-hidden shadow-md">
             <Image
