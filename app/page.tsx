@@ -33,7 +33,7 @@ const staggerContainer = {
 const imgs = [
   '/images/malarkey.png',
   '/images/bp.png',
-  '/images/velux.png',
+  '/images/velux.jpg',
   '/images/iko.png',
 ]
   
@@ -45,6 +45,8 @@ export default function Home() {
    const [currentIndex, setCurrentIndex] = useState(0);
     const [isVisible, setIsVisible] = useState(true);
     const visibleImages = 3;
+  ;
+  const [currentIndexPhoto, setCurrentIndexPhoto] = useState(0);
   
   // Handle mobile menu toggle
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -98,6 +100,18 @@ export default function Home() {
   ];
 
 
+  const imagesHero = ["/images/hero1.jpg", "/images/hero2.jpg", "/images/hero3.jpg"]
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndexPhoto((prevIndex) => (prevIndex + 1) % imagesHero.length);
+    }, 10000);
+    
+    return () => clearInterval(timer);
+}, [imagesHero.length]);
+// Change image every 5 seconds
+
+
   return (
     <div className="flex flex-col min-h-screen">
          {/* Header */}
@@ -144,7 +158,7 @@ export default function Home() {
          </header>
          
          {/* Hero Section */}
-         <section className="relative text-white" style={{ backgroundImage: `url('/images/hero1.jpg')` }}>
+         {/* <section className="relative text-white" style={{ backgroundImage: `url('/images/hero1.jpg')` }}>
            <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
            <div className="relative z-20 container mx-auto px-4 py-20 md:py-32 flex flex-col items-center text-center">
              <motion.div
@@ -160,14 +174,64 @@ export default function Home() {
                    Get A Free Estimate
                    <Phone className="ml-2 h-4 w-4" />
                  </Button>
-                 {/* <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-slate-900">
-                   Our Services
-                   <ArrowRight className="ml-2 h-4 w-4" />
-                 </Button> */}
+
                </div>
              </motion.div>
            </div>
-         </section>
+         </section> */}
+
+<section className="relative w-full h-[600px] md:h-[700px] overflow-hidden text-white">
+      {/* Carousel Background Images */}
+      <AnimatePresence mode="wait">
+        {imagesHero.map((src, index) =>
+          index === currentIndexPhoto ? (
+            <motion.div
+              key={src}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1, ease: 'easeInOut' }}
+              className="absolute w-full h-full"
+            >
+              <Image
+                src={src}
+                alt={`Hero ${index + 1}`}
+                fill
+                className="object-cover"
+                priority
+              />
+            </motion.div>
+          ) : null
+        )}
+      </AnimatePresence>
+
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/50 bg-opacity-50 z-10"></div>
+
+      {/* Hero content */}
+      <div className="relative z-20 container mx-auto px-4 py-20 md:py-32 flex flex-col items-center text-center">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeIn}
+        >
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            Calgary&apos;s Asphalt Re-Roofing Specialists
+          </h1>
+          <p className="text-xl max-w-2xl mx-auto mb-8">
+            When it comes to roofing, a company doesn&apos;t have to be big to do high quality work. That&apos;s why we work on the principle of &quot;small company, big on quality.&quot;
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Button size="lg" className="bg-sky-600 hover:bg-sky-700 text-white">
+              Get A Free Estimate
+              <Phone className="ml-2 h-4 w-4" />
+            </Button>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+
          
          {/* About Section */}
          <section id="about" className="py-16 bg-white">
