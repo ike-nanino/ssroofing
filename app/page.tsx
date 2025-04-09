@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Star, Phone, MapPin, ArrowRight, Check, Menu, X, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -29,12 +29,24 @@ const staggerContainer = {
   }
 };
 
+
+const imgs = [
+  '/assets/icons/theguardian.jpg',
+  '/assets/icons/nytimes.jpg',
+  '/assets/icons/mayfair.jpg',
+  '/assets/icons/ceomagazine.jpg',
+  '/assets/icons/businessinsider.jpg',
+  '/assets/icons/bloomberg.jpg',
+]
   
 
 
 export default function Home() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+   const [currentIndex, setCurrentIndex] = useState(0);
+    const [isVisible, setIsVisible] = useState(true);
+    const visibleImages = 3;
   
   // Handle mobile menu toggle
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -50,6 +62,20 @@ export default function Home() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [isMenuOpen]);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+        setIsVisible(false); // Trigger exit animation
+        setTimeout(() => {
+            setCurrentIndex((prevIndex) => 
+                prevIndex === imgs.length - visibleImages ? 0 : prevIndex + 1
+            );
+            setIsVisible(true); // Trigger enter animation
+        }, 200); // Slight delay for smooth transition
+    }, 3000);
+
+    return () => clearInterval(timer);
+}, []);
 
   // Google Reviews Data
   const reviews = [
@@ -132,14 +158,14 @@ export default function Home() {
                <h1 className="text-4xl md:text-6xl font-bold mb-4">Calgary&apos;s Asphalt Re-Roofing Specialists</h1>
                <p className="text-xl max-w-2xl mx-auto mb-8">When it comes to roofing, a company doesn&apos;t have to be big to do high quality work. That&apos;s why we work on the principle of &quot;small company, big on quality.&quot;</p>
                <div className="flex flex-col sm:flex-row justify-center gap-4">
-                 <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white">
+                 <Button size="lg" className="bg-sky-600 hover:bg-sky-700 text-white">
                    Get A Free Estimate
                    <Phone className="ml-2 h-4 w-4" />
                  </Button>
-                 <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-slate-900">
+                 {/* <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-slate-900">
                    Our Services
                    <ArrowRight className="ml-2 h-4 w-4" />
-                 </Button>
+                 </Button> */}
                </div>
              </motion.div>
            </div>
@@ -267,7 +293,7 @@ export default function Home() {
             Our Services
           </h2>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 title: 'Shingles',
@@ -313,6 +339,55 @@ export default function Home() {
         </motion.div>
       </div>
     </section>
+
+    {/* Featured */}
+
+
+    <div className='bg-white py-16 text-center px-10'>
+            <h2 className='text-4xl mb-10 font-secondary'>
+                As featured in
+            </h2>
+            
+            <div className='max-w-6xl mx-auto overflow-hidden'>
+                <AnimatePresence mode="wait">
+                    {isVisible && (
+                        <motion.div 
+                            className='flex'
+                            initial={{ opacity: 0 }}
+                            animate={{ 
+                                opacity: 1,
+                                x: `-${currentIndex * (100 / visibleImages)}%`
+                            }}
+                            exit={{ opacity: 0 }}
+                            transition={{
+                                duration: 0.5,
+                                ease: "easeInOut"
+                            }}
+                        >
+                            {[...imgs, ...imgs].map((img, index) => (
+                                <motion.div
+                                    key={index}
+                                    className='flex-shrink-0'
+                                    style={{ width: `${100 / visibleImages}%` }}
+                                >
+                                    <Image 
+                                        src={img} 
+                                        alt={`Featured publication ${index + 1}`}
+                                        width={300}
+                                        height={100}
+                                        className='h-24 w-auto object-contain mx-auto'
+                                        priority={index < visibleImages}
+                                    />
+                                </motion.div>
+                            ))}
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </div>
+        </div>
+
+
+
          
          {/* Reviews Section */}
          <section id="reviews" className="py-16 bg-white">
